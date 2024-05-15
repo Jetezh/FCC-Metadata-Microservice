@@ -1,7 +1,6 @@
+require('dotenv').config();
 var express = require('express');
 var cors = require('cors');
-require('dotenv').config()
-
 var app = express();
 
 app.use(cors());
@@ -11,7 +10,9 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-
+app.get("/api/fileanalyse", (req, res) => {
+  const { upfile } = req.body;
+});
 
 
 const port = process.env.PORT || 3000;
